@@ -16,7 +16,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{listings}
-\usepackage[x11names, rgb]{xcolor}
+\usepackage[x11names,rgb,table]{xcolor}
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{subcaption}
@@ -45,6 +45,7 @@
 \DeclareMathOperator*{\Pa}{\text{Pa}}
 \DeclareMathOperator*{\Sc}{\text{Sc}}
 \newcommand{\ov}{\overline}
+\newcommand{\tsup}{\textsuperscript}
 
 \newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
 
@@ -181,6 +182,28 @@ Durante a realização do projeto, serão elaborados documentos científicos par
 ENIAC 2017 e para o acompanhamento geral do desempenho acadêmico do candidato.
 
 O cronograma para o desenvolvimento desta pesquisa segue abaixo.
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Atividade/Mês & 1\tsup{o}--2\tsup{o} & 4\tsup{o}--5\tsup{o} & 6\tsup{o}--7\tsup{o} &
+    8\tsup{o}--10\tsup{o} & 11\tsup{o}--12\tsup{o} \\ \hline
+    a & $\times$ & & & & \\ \hline
+    b & & & & & \\ \hline
+    c & & & & & \\ \hline
+    d & & & & & \\ \hline
+    e & & & & & \\
+    \hline
+  \end{tabular}
+\end{table}
+
+%\begin{enumerate}[label=\alpha*]
+  %\item a
+  %\item b
+  %\item c
+%\end{enumerate}
 
 \printbibliography[]
 

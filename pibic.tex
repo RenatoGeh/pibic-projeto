@@ -9,7 +9,7 @@
 \usepackage{amsfonts}
 \usepackage{hyperref}
 \usepackage[singlelinecheck=false]{caption}
-\usepackage[backend=biber,url=true,doi=true,eprint=false,style=alphabetic]{biblatex}
+\usepackage[backend=biber,url=true,doi=true,eprint=false,style=numeric]{biblatex}
 \usepackage{enumitem}
 \usepackage[justification=centering]{caption}
 \usepackage{indentfirst}
@@ -22,6 +22,7 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{linegoal}
+\usepackage{geometry}
 \usetikzlibrary{snakes,arrows,shapes}
 
 \addbibresource{references.bib}
@@ -107,7 +108,6 @@ Orientador: Prof.\ Dr.\ Denis Deratani Mauá}\\
   {\textbf{São Paulo}}\\
   \vspace{0.25cm}
   {\textbf{2017}}\\
-  \clearpage
 }
 \date{}
 
@@ -115,28 +115,72 @@ Orientador: Prof.\ Dr.\ Denis Deratani Mauá}\\
 
 \maketitle
 
+\newgeometry{margin=1in}
 \section{Introdução}
 
-Aprendizado de máquina é uma área da Inteligência Artificial cujo objetivo é estatísticamente
+Aprendizado de máquina é uma área da Inteligência Artificial cujo objetivo é estatisticamente
 ajustar os parâmetros de um certo modelo matemático dado um conjunto de dados a fim de que seja
 possível fazer previsões acuradas do que se está modelando. Para isso, faz-se uso de modelos
 estatísticos que possibilitam, por meio de métodos computacionais, lidar com um grande número de
-variáveis e fazer previsões com alta taxa de acerto. Por meio da Estatística, é possível resolver
-um grande número de problemas cujo número de variáveis seria grande demais para humanos.  Modelos
-probabilísticos baseados em grafos (PGM, do inglês Probabilistic Graphical Model), são uma classe
-destes modelos estatísticos em que se usa grafos para representá-los graficamente.
+variáveis e fazer previsões com alta taxa de acerto. Por meio da Estatística e Computação, é
+possível resolver um grande número de problemas cujo número de variáveis seria grande demais para
+humanos.  Modelos probabilísticos baseados em grafos (PGM, do inglês \textit{Probabilistic
+Graphical Model}), são uma classe destes modelos estatísticos em que se usa grafos para
+representá-los graficamente.
 
 Os modelos probabilísticos baseados em grafos representam uma distribuição de probabilidade de
 forma compacta. Estes modelos representados por grafos facilitam tanto a compreensão humana ao
 estudá-los, quanto possibilitam que vários problemas já existentes em Teoria dos Grafos sejam
 utilizados como solução para problemas em PGMs. Extrair conhecimento de PGMs é análogo a extrair a
 probabilidade de um certo evento ocorrer dado que eventos distintos tenham ocorrido. Tal extração
-de conhecimento é chamada de inferência, e em modelos probabilísticos isto se dá por meio de
-probabilidades. Fazer inferência exata em PGMs clássicas, ou seja, acharmos a probabilidade exata
-de um certo evento, é intratável. Uma solução para este problema é utilizarmos métodos para
-inferência aproximada em tais modelos. No entanto, tais algoritmos aproximados são muitas vezes
-difíceis de analisar e 
+de conhecimento é chamada de inferência. Fazer inferência exata em PGMs clássicas, ou seja,
+acharmos a probabilidade exata de um certo evento, é intratável. Uma solução para este problema é
+utilizarmos métodos para inferência aproximada em tais modelos. No entanto, tais algoritmos
+aproximados são muitas vezes difíceis de analisar. Além disso, como os algoritmos de aprendizado do
+modelo utilizam inferência como subrotina, por consequência o aprendizado torna-se aproximado.
 
+Redes soma-produto (SPN, de \textit{Sum-Product Network}) são PGMs que representam uma distribuição
+de probabilidade tratável. Proposto em 2011, SPNs computam inferência exata em tempo linear ao
+número de arestas de seu grafo se obedecerem a certas propriedades~\cite{poon-domingos}. SPNs
+apresentam uma série de características interessantes, como sua arquitetura profunda que permite
+representar funções de forma mais eficiente quanto mais profundo seu grafo~\cite{shallow-vs-deep}.
+Outras interessantes propriedades teóricas incluem uma generalização de SPNs para qualquer
+semi-anel em que o produto tenha escopo disjunto~\cite{sp-theorem}. SPNs tiveram resultados
+impressionantes em diversas aplicações, como enovelamento de proteínas~\cite{rec-dec-non-convex},
+modelagem de sinais~\cite{model-speech}, classificação e reconstrução de imagens
+\cite{gens-domingos,poon-domingos,clustering}, reconhecimento de atividade~\cite{activity} e
+linguagem natural~\cite{nat-lang}.
+
+Neste projeto, pretende-se desenvolver uma biblioteca livre e gratuita para algoritmos de
+aprendizado estado-da-arte e inferência em SPNs, analisando-se experimentalmente tais algoritmos em
+tarefas reais, como compleição e classificação de imagens.
+\newpage
+
+\section{Objetivos}
+
+Os objetivos esperados neste trabalho são:
+
+\begin{enumerate}
+  \item Domínio de conceitos sobre aprendizagem de SPNs.
+  \item Desenvolvimento de uma biblioteca livre e gratuita de algoritmos de aprendizado de SPNs
+    estado-da-arte.
+  \item Análise experimental comparativa em tarefas reais.
+\end{enumerate}
+
+\section{Metodologia}
+
+A pesquisa terá seu início com o estudo dos conceitos e do estado-da-arte de SPNs, estudando-se
+diferentes métodos de aprendizagem de SPNs, tanto estruturais quanto relativos aos pesos do grafo.
+
+Após o entendimento de cada algoritmo de aprendizagem, será iniciada a implementação do algoritmo
+na biblioteca livre e gratuita a ser desenvolvida, buscando documentar o código e elaborar
+relatórios. Com o desenvolvimento dos diferentes algoritmos de aprendizagem, pretende-se elaborar
+relatórios contendo uma comparação experimental em conjuntos de dados reais.
+
+Durante a realização do projeto, serão elaborados documentos científicos para possível submissão a
+ENIAC 2017 e para o acompanhamento geral do desempenho acadêmico do candidato.
+
+O cronograma para o desenvolvimento desta pesquisa segue abaixo.
 
 \printbibliography[]
 
